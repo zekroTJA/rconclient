@@ -1,3 +1,4 @@
+import sys
 import logging
 from os import path
 
@@ -46,7 +47,7 @@ class Properties:
     def _check(self):
         if not self.rcon_enabled:
             self._logger.critical('RCON is disabled in server.properties')
-            exit()
+            sys.exit(1)
         if not self.password:
             self._logger.critical('no RCON password provided')
-            exit()
+            sys.exit(1)
