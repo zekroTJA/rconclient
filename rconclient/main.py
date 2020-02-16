@@ -16,7 +16,8 @@ def main():
 
     rcon = AsyncRCON(prop.address, prop.password,
                      max_command_retries=argv.max_retries,
-                     auto_reconnect=argv.auto_reconnect)
+                     auto_reconnect=argv.auto_reconnect,
+                     encoding=argv.rcon_encoding)
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(routine(rcon, argv, prop))

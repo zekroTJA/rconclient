@@ -30,5 +30,8 @@ def get_args():
     p_rcon.add_argument(
         '-max-retries', type=int, default=10,
         help='Maximum ammount of command retries on failure')
+    p_rcon.add_argument(
+        '--rcon-encoding', type=str, default='utf-8',
+        help='RCON payload encoding')
 
     return p.parse_args()
