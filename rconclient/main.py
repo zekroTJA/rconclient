@@ -1,12 +1,25 @@
 import args
 import logging
 import asyncio
+import asyncrcon
 from prop import Properties
 from asyncrcon import AsyncRCON, AuthenticationException
 
 
+_VERSION = '1.1.0'
+
+
 def main():
     argv = args.get_args()
+
+    if argv.version:
+        v = ('rconclient v.{}\n' +
+             'Using asyncrcon v.{}\n' +
+             'https://github.com/zekroTJA/rconclient\n' +
+             '(c) 2020 Ringo Hoffmann (zekro Development)\n' +
+             'Covered by the MIT Licence.')
+        print(v.format(_VERSION, asyncrcon.__version__))
+        return
 
     logging.basicConfig(
         level=60 if argv.silent else argv.log_level,

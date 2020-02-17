@@ -11,6 +11,9 @@ def get_args():
     p.add_argument(
         '--silent', '-s', default=False, action='store_true',
         help='Only output command result')
+    p.add_argument(
+        '--version', '-v', action='store_true',
+        help='Dispaly version information')
 
     p_cred = p.add_argument_group('Credentials')
     p_cred.add_argument(
