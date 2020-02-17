@@ -8,6 +8,11 @@ PYINSTALLER = pyinstaller
 APPNAME = rconclient
 BINNAME = $(APPNAME)
 
+
+ifeq ($(OS),Windows_NT)
+	EXE = .exe
+endif
+
 _build: pre-build build
 
 run:
@@ -25,7 +30,7 @@ pre-build:
 build:
 	$(PYINSTALLER) $(CURDIR)/$(APPNAME)/main.py \
 		-y --onefile \
-		--name $(BINNAME)
+		--name $(BINNAME)$(EXE)
 
 install:
 	mv $(CURDIR)/dist/$(BINNAME) \
