@@ -1,3 +1,6 @@
+> ## Outdated!
+> This repository is sort of outdated and has some bugs. Please use the following RCON client implementation: [**zekroTJA/rconcli**](https://github.com/zekrotja/rconcli).
+
 # rconclient
 
 A simple staight forward RCON client especially concipated to be used in Docker containers.
